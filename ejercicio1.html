@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Reservation Form</title>
+    <style>
+        body {
+           
+        }
+        .form-container {
+            width: 300px;
+            margin: auto;
+        }
+       
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="checkbox"] {
+            width: auto;
+        }
+        .form-container input[type="radio"] {
+            width: auto;
+        }
+    
+        
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Travel Reservation Form</h2>
+        <p><span class="mandatory">*</span> denotes mandatory</p>
+        
+        <form action="/submit" method="POST">
+            <label for="fullname">Full name<span class="mandatory">*</span>:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="FirstName LastName" required>
+
+            <label for="email">Email address<span class="mandatory">*</span>:</label>
+            <input type="email" id="email" name="email" placeholder="EMAIL_ADDRESS" required>
+
+            <label for="package">Select Tour Package<span class="mandatory">*</span>:</label>
+            <select id="package" name="package" required>
+                <option value="goa">Goa</option>
+                <option value="paris">Paris</option>
+                <option value="dubai">Dubai</option>
+            </select>
+
+            <label for="arrival">Arrival date<span class="mandatory">*</span>:</label>
+            <input type="date" id="arrival" name="arrival" required>
+
+            <label for="persons">Number of persons<span class="mandatory">*</span>:</label>
+            <input type="number" id="persons" name="persons" min="1" required>
+
+            <label>What would you want to avail?<span class="mandatory">*</span></label>
+            <input type="checkbox" id="boarding" name="boarding">
+            <label for="boarding" style="display:inline;">Boarding</label><br>
+            <input type="checkbox" id="fooding" name="fooding">
+            <label for="fooding" style="display:inline;">Fooding</label><br>
+            <input type="checkbox" id="sightseeing" name="sightseeing">
+            <label for="sightseeing" style="display:inline;">Sight seeing</label><br>
+
+            <label for="coupon">Discount Coupon code:</label>
+            <input type="text" id="coupon" name="coupon">
+
+            <label>Terms and conditions<span class="mandatory">*</span></label>
+            <input type="radio" id="agree" name="terms" value="agree" required>
+            <label for="agree" style="display:inline;">I agree</label><br>
+            <input type="radio" id="disagree" name="terms" value="disagree" required>
+            <label for="disagree" style="display:inline;">I disagree</label><br>
+
+            <button type="submit">Complete reservation</button>
+        </form>
+    </div>
+
+</body>
+</html>
